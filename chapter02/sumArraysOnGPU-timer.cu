@@ -1,3 +1,4 @@
+//  nvcc sumArraysOnGPU-timer.cu -o sumArraysOnGPU-timer
 #include "../common/common.h"
 #include <cuda_runtime.h>
 #include <stdio.h>

@@ -1,3 +1,4 @@
+// nvcc [-O3]  reduceInteger.cu -o reduceInteger
 #include "../common/common.h"
 #include <stdio.h>
 #include <cuda_runtime.h>

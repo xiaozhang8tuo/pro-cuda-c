@@ -1,3 +1,4 @@
+// nvcc -o check checkDimension.cu
 #include "../common/common.h"
 #include <cuda_runtime.h>
 #include <stdio.h>
@@ -16,6 +17,18 @@ __global__ void checkIndex(void)
     printf("gridDim:(%d, %d, %d)\n", gridDim.x, gridDim.y, gridDim.z);
 
 }
+
+// threadIdx 对应着block的dim
+// blockIdx  对应着grid的dim
+
+// grid.x 2 grid.y 1 grid.z 1
+// block.x 3 block.y 1 block.z 1
+// threadIdx:(0,0,0)blockIdx:(1,0,0)blockDim:(3,1,1)gridDim:(2,1,1)
+// threadIdx:(1,0,0)blockIdx:(1,0,0)blockDim:(3,1,1)gridDim:(2,1,1)
+// threadIdx:(2,0,0)blockIdx:(1,0,0)blockDim:(3,1,1)gridDim:(2,1,1)
+// threadIdx:(0,0,0)blockIdx:(0,0,0)blockDim:(3,1,1)gridDim:(2,1,1)
+// threadIdx:(1,0,0)blockIdx:(0,0,0)blockDim:(3,1,1)gridDim:(2,1,1)
+// threadIdx:(2,0,0)blockIdx:(0,0,0)blockDim:(3,1,1)gridDim:(2,1,1)
 
 int main(int argc, char **argv)
 {

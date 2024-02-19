@@ -1,3 +1,4 @@
+// nvcc globalVariable.cu -o a
 #include "../common/common.h"
 #include <cuda_runtime.h>
 #include <stdio.h>
@@ -26,6 +27,13 @@ int main(void)
     printf("Host:   copied %f to the global variable\n", value);
 
     // invoke the kernel
+    checkGlobalVariable<<<1, 1>>>();
+
+    // copy the global variable back to the host
+    CHECK(cudaMemcpyFromSymbol(&value, devData, sizeof(float)));
+    printf("Host:   the value changed by the kernel to %f\n", value);
+
+        // invoke the kernel
     checkGlobalVariable<<<1, 1>>>();
 
     // copy the global variable back to the host

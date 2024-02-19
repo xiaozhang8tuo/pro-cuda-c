@@ -1,3 +1,4 @@
+// nvcc defineGridBlock.cu -o block
 #include "../common/common.h"
 #include <cuda_runtime.h>
 #include <stdio.h>

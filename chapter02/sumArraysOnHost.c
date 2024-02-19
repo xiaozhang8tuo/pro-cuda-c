@@ -1,3 +1,4 @@
+// gcc  -o sum  sumArraysOnHost.c
 #include <stdlib.h>
 #include <time.h>
 

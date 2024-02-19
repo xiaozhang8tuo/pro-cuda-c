@@ -1,3 +1,4 @@
+//  nvcc -o sum sumMatrixOnGPU.cu
 #include "../common/common.h"
 #include <cuda_runtime.h>
 #include <stdio.h>

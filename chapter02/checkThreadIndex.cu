@@ -1,3 +1,4 @@
+//  nvcc checkThreadIndex.cu -o checkIndex
 #include "../common/common.h"
 #include <cuda_runtime.h>
 #include <stdio.h>
