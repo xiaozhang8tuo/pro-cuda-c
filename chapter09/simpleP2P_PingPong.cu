@@ -1,3 +1,4 @@
+// nvcc -O3 simpleP2P_PingPong.cu -o simplePingPong
 #include "../common/common.h"
 #include <stdlib.h>
 #include <stdio.h>

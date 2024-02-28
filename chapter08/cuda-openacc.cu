@@ -1,3 +1,7 @@
+// pgc++ -acc cuda-openacc.cu -o cuda-openacc -Minfo=accel 
+// -L/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/math_libs/12.2/targets/x86_64-linux/lib/   -lcurand -lcublas -lcudart 
+// -I/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/math_libs/12.2/targets/x86_64-linux/include
+// export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/math_libs/12.2/targets/x86_64-linux/lib:$LD_LIBRARY_PATH
 #include "../common/common.h"
 #include <stdio.h>
 #include <stdlib.h>

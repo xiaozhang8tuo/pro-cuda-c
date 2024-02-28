@@ -1,3 +1,4 @@
+// nvcc -O3 -Xcompiler -fopenmp simpleHypergopenmp.cu -o simpleHypergopenmp -lgomp
 #include "../common/common.h"
 #include <stdio.h>
 #include <cuda_runtime.h>

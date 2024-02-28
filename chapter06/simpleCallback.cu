@@ -126,7 +126,7 @@ int main(int argc, char **argv)
         CHECK(cudaStreamAddCallback(streams[i], my_callback,
                     (void *)(stream_ids + i), 0));
     }
-
+    printf("TEST =================\n");
     CHECK(cudaEventRecord(stop_event, 0));
     CHECK(cudaEventSynchronize(stop_event));
 

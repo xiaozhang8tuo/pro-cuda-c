@@ -1,3 +1,9 @@
+// mpicc -std=c99 -O3 simpleP2P_CUDA_Aware.c -o simplep2p_cuda  
+// -I/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/12.2/targets/x86_64-linux/include/ 
+// -L/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/12.2/targets/x86_64-linux/lib/ -lcudart
+// export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/12.2/targets/x86_64-linux/lib/:$LD_LIBRARY_PATH
+// mpiexec -n 2 ./simplep2p_cuda
+
 #include <mpi.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -81,7 +87,7 @@ int main (int argc, char *argv[])
     CHECK(cudaMalloc((void **)&d_src, MYBUFSIZE));
     CHECK(cudaMalloc((void **)&d_rcv, MYBUFSIZE));
 
-    for (int size = 1; size <= MAX_MSG_SIZE; size *= 2)
+    for (int size = 1024; size <= MAX_MSG_SIZE; size *= 2)
     {
         MPI_Barrier(MPI_COMM_WORLD);
 
@@ -127,7 +133,7 @@ int main (int argc, char *argv[])
             double tmp = size / 1e6 * loop  * 2;
             double t = (tend - tstart);
 
-            printf("%-*d%*.*f\n", 10, size, FIELD_WIDTH, FLOAT_PRECISION,
+            printf("%-*d %s %*.*f\n", 10, (size >= 1024 * 1024) ? size / 1024 / 1024 : size / 1024, (size >= 1024 * 1024) ? "MB" : "KB", FIELD_WIDTH, FLOAT_PRECISION,
                     tmp / t);
             fflush(stdout);
         }

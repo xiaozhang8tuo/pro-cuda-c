@@ -1,2 +1,6 @@
 *.sqlite
 *.nsys-rep
+simpleHyperQ*
+.metadata
+.project
+.vscode

@@ -1,3 +1,4 @@
+// nvcc simpleHyperqDepth.cu -o simpleHyperQ
 #include "../common/common.h"
 #include <stdio.h>
 #include <cuda_runtime.h>

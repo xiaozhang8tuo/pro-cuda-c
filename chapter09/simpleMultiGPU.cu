@@ -1,3 +1,4 @@
+//  nvcc -O3 simpleMultiGPU.cu -o M
 #include "../common/common.h"
 #include <stdio.h>
 #include <assert.h>

@@ -1,3 +1,5 @@
+// mpicc -std=c99 -O3 simpleC2C.c -o simplec2c
+// mpiexec -n 2 ./simplec2c
 #include <mpi.h>
 #include <stdlib.h>
 #include <stdio.h>

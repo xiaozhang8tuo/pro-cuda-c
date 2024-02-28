@@ -1,3 +1,8 @@
+// mpicc -std=c99 -O3 simpleP2P.c -o simplep2p 
+// -I/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/12.2/targets/x86_64-linux/include/ 
+// -L/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/12.2/targets/x86_64-linux/lib/ -lcudart
+// export LD_LIBRARY_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/12.2/targets/x86_64-linux/lib/:$LD_LIBRARY_PATH
+// mpiexec -n 2 ./simplep2p
 #include <mpi.h>
 #include <stdlib.h>
 #include <stdio.h>

@@ -1,3 +1,4 @@
+// nvcc simpleHyperqDepth.cu -o simpleHyperQ
 #include "../common/common.h"
 #include <stdio.h>
 #include <cuda_runtime.h>
@@ -12,7 +13,7 @@
  * scheduling of these kernels simpler to visualize in the Visual Profiler.
  */
 
-#define N 300000
+#define N 300000000
 #define NSTREAM 4
 
 __global__ void kernel_1()
