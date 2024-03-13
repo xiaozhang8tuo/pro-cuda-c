@@ -1,3 +1,7 @@
+// nvcc debug-segfault.cu -o debug-segfault -g -G -Xcompiler -rdynamic
+// cuda-gdb ./debug-segfault
+// nvcc -lineinfo -Xcompiler -rdynamic -o debug-segfault debug-segfault.cu
+// cuda-memcheck ./debug-segfault
 #include "../common/common.h"
 #include <stdio.h>
 
